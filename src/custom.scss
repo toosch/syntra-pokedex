@@ -1,0 +1,16 @@
+// Pokémon logo blue as primary instead of default
+$pokeblue: #356abc;
+$theme-colors: (
+  "primary": $pokeblue,
+);
+
+// use pokeapi sprite resolution as max, nobody likes blurry images
+.poke-img {
+  max-width: 96px;
+}
+
+.full-height {
+  min-height: 100vh;
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap";
