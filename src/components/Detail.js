@@ -31,7 +31,6 @@ function Overview() {
             <>
               {!imageLoaded && <PokeSpinner />}
               <Card.Img
-                className="poke-img border shadow d-flex mx-auto my-3"
                 src={data.sprites.front_default}
                 alt={pokemon}
                 className={`poke-img mx-auto mt-2 ${

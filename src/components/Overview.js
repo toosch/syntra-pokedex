@@ -49,11 +49,9 @@ function Overview() {
         {error && (
           <>
             <p className="text-center">Oops, something went wrong.</p>
-            <a>
-              <Button className="d-block mx-auto w-25" href="/">
-                Try reloading this page
-              </Button>
-            </a>
+            <Button className="d-block mx-auto w-25" href="/">
+              Try reloading this page
+            </Button>
           </>
         )}
         {!data && !error && (
