@@ -21,7 +21,7 @@ function Overview() {
   return (
     <>
       <Container className="p-0 pb-5">
-        <Link to="/">
+        <Link to="/" className="text-decoration-none">
           <Button className="d-block mx-auto mb-4">Back to overview</Button>
         </Link>
         {!data && !error && <PokeSpinner className="m-auto" />}
@@ -49,7 +49,7 @@ function Overview() {
             </>
           </Card>
         )}
-        <Link to="/">
+        <Link to="/" className="text-decoration-none">
           <Button className="d-block mx-auto mt-4">Back to overview</Button>
         </Link>
       </Container>
