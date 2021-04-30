@@ -40,7 +40,7 @@ function Overview() {
               ></Card.Img>
               <Card.Body className="text-secondary text-center">
                 {data && <h3>{pokemon}</h3>}
-                <ListGroup className="">
+                <ListGroup className="w-25 mx-auto shadow-sm">
                   <ListGroup.Item>weight: {data.weight}</ListGroup.Item>
                   <ListGroup.Item>height: {data.height}</ListGroup.Item>
                 </ListGroup>
