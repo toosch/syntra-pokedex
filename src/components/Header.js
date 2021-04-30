@@ -3,7 +3,7 @@ import Image from "react-bootstrap/Image";
 
 function Header() {
   return (
-    <Container className="p-0 pt-4 px-3">
+    <Container className="pt-4">
       <Image
         src="https://fontmeme.com/permalink/210427/4a7fbbfb3ac7c7d406e6c0af1fc9df6b.png"
         alt="Syntra FSD"

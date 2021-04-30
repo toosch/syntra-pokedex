@@ -23,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && surge ./build -d https://pokedex-toosch.surge.sh"
+    "deploy": "npm run build && cp ./build/index.html ./build/200.html && surge ./build -d https://pokedex-toosch.surge.sh"
   },
   "eslintConfig": {
     "extends": [

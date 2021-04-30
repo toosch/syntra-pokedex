@@ -3,6 +3,8 @@ import axios from "axios";
 import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
 
+import PokeSpinner from "./PokeSpinner";
+
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
@@ -15,23 +17,29 @@ function Overview() {
     `https://pokeapi.co/api/v2/pokemon/${pokemon}`,
     fetcher
   );
+  const [imageLoaded, setImageLoaded] = useState(false);
   return (
     <>
       <Container className="p-0 pb-5">
         <Link to="/">
           <Button className="d-block mx-auto mb-4">Back to overview</Button>
         </Link>
+        {!data && !error && <PokeSpinner className="m-auto" />}
         {error && <p className="text-center">Oops, something went wrong.</p>}
         {data && (
-          <Card>
+          <Card className="shadow">
             <>
+              {!imageLoaded && <PokeSpinner />}
               <Card.Img
                 className="poke-img border shadow d-flex mx-auto my-3"
                 src={data.sprites.front_default}
                 alt={pokemon}
+                className={`poke-img mx-auto mt-2 ${
+                  imageLoaded ? "d-inline" : "d-none"
+                }`}
+                onLoad={() => setImageLoaded(true)}
               ></Card.Img>
               <Card.Body className="text-secondary text-center">
-                {console.log(data)}
                 {data && <h3>{pokemon}</h3>}
                 <ListGroup className="">
                   <ListGroup.Item>weight: {data.weight}</ListGroup.Item>

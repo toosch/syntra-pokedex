@@ -19,7 +19,7 @@ function Overview() {
   );
   return (
     <>
-      <Container className="p-0 mb-4 d-flex">
+      <Container className="mb-4 d-flex">
         {data && data.previous && (
           <Button
             variant="primary"
@@ -45,7 +45,7 @@ function Overview() {
           </Button>
         )}
       </Container>
-      <Container className="p-0">
+      <Container className="">
         {error && (
           <>
             <p className="text-center">Oops, something went wrong.</p>
@@ -57,7 +57,7 @@ function Overview() {
           </>
         )}
         {!data && !error && (
-          <Row>
+          <Row className="p-0 m-0">
             <PokeSpinner className="m-auto" />
           </Row>
         )}
@@ -97,7 +97,7 @@ function Overview() {
           </Col>
         </Row>
       </Container>
-      <Container className="p-0 pb-5 d-flex">
+      <Container className="pb-5 d-flex">
         {data && data.previous && (
           <Button
             variant="primary"

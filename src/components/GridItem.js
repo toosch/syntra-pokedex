@@ -38,6 +38,9 @@ function Overview({ pokemon }) {
               <h5 className="card-title text-center text-secondary">
                 {pokemon.name}
               </h5>
+              {error && (
+                <p className="text-center">Oops, something went wrong.</p>
+              )}
             </Card.Body>
           </Card>
         </Link>
