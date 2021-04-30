@@ -1,8 +1,10 @@
 import useSwr from "swr";
 import axios from "axios";
+import { useState } from "react";
+
 import GridItem from "./GridItem";
 import PokeSpinner from "./PokeSpinner";
-import { useState } from "react";
+
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -44,13 +46,23 @@ function Overview() {
         )}
       </Container>
       <Container className="p-0">
-        {!data && (
+        {error && (
+          <>
+            <p className="text-center">Oops, something went wrong.</p>
+            <a>
+              <Button className="d-block mx-auto w-25" href="/">
+                Try reloading this page
+              </Button>
+            </a>
+          </>
+        )}
+        {!data && !error && (
           <Row>
             <PokeSpinner className="m-auto" />
           </Row>
         )}
         {/* dirty fix --> TODO: make component to build grid */}
-        <Row>
+        <Row className="p-0">
           <Col>
             {data &&
               data.results
@@ -85,7 +97,7 @@ function Overview() {
           </Col>
         </Row>
       </Container>
-      <Container className="p-0 pb-4 d-flex">
+      <Container className="p-0 pb-5 d-flex">
         {data && data.previous && (
           <Button
             variant="primary"

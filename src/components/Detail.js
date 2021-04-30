@@ -1,7 +1,8 @@
-import React from "react";
 import useSwr from "swr";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
+import { useState } from "react";
+
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
@@ -16,12 +17,13 @@ function Overview() {
   );
   return (
     <>
-      <Container className="p-0">
+      <Container className="p-0 pb-5">
         <Link to="/">
           <Button className="d-block mx-auto mb-4">Back to overview</Button>
         </Link>
-        <Card>
-          {data && (
+        {error && <p className="text-center">Oops, something went wrong.</p>}
+        {data && (
+          <Card>
             <>
               <Card.Img
                 className="poke-img border shadow d-flex mx-auto my-3"
@@ -37,9 +39,8 @@ function Overview() {
                 </ListGroup>
               </Card.Body>
             </>
-          )}
-          {error && <p>Oops, something went wrong.</p>}
-        </Card>
+          </Card>
+        )}
         <Link to="/">
           <Button className="d-block mx-auto mt-4">Back to overview</Button>
         </Link>
